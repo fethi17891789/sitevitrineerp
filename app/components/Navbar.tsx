@@ -26,19 +26,19 @@ export default function Navbar() {
         initial={{ y: -80 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as any }}
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        className={`fixed inset-x-0 top-0 z-[1000] transition-all duration-700 ${
           scrolled
-            ? "bg-surface/40 backdrop-blur-2xl border-b border-white/[0.08] silver-glow"
-            : ""
+            ? "silver-glass border-spotlight silver-glow !rounded-none"
+            : "bg-transparent border-b border-white/5"
         }`}
       >
         <nav className="max-w-7xl mx-auto flex items-center justify-between h-20 px-8">
           <a href="#hero" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-white via-primary-soft to-white flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all group-hover:scale-110 active:scale-90">
-              <span className="text-black font-black text-lg">S</span>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-white via-primary-soft to-white flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all group-hover:rotate-6 group-hover:scale-110 active:scale-90 border border-white/20">
+              <span className="text-black font-black text-[15px]">S</span>
             </div>
-            <span className="text-[17px] font-bold text-white tracking-widest uppercase bg-clip-text bg-gradient-to-r from-white via-white to-subtle group-hover:text-primary-hover transition-colors">
-              Skyra
+            <span className="text-[14px] font-black uppercase tracking-[0.4em] text-white group-hover:text-primary-hover transition-all">
+              Skyra Engine
             </span>
           </a>
 
@@ -47,19 +47,19 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="px-5 py-2 text-[12px] font-bold uppercase tracking-widest text-white/50 hover:text-white transition-all rounded-full hover:bg-white/5"
+                className="px-6 py-2 text-[11px] font-bold uppercase tracking-[0.3em] text-white/40 hover:text-white transition-all rounded-full hover:bg-white/5"
               >
                 {l.label}
               </a>
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-5">
             <a
               href="#download"
-              className="hidden sm:inline-flex text-[11px] font-black uppercase tracking-[0.2em] text-black px-6 py-2.5 rounded-full bg-white shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.6)] hover:scale-105 active:scale-95 transition-all"
+              className="hidden sm:inline-flex text-[11px] font-black uppercase tracking-[0.3em] text-black px-8 py-3 rounded-full bg-white shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] hover:scale-110 active:scale-95 transition-all cursor-pointer"
             >
-              Get Started
+              Démarrer
             </a>
             <button
               onClick={() => setOpen(!open)}

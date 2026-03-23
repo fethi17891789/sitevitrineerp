@@ -62,61 +62,85 @@ body::before {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 4px; }
 
-/* REATIVE SILVER GLASS */
+/* ULTRA-PREMIUM SILVER GLASS (iOS 17 Intensity) */
 .silver-glass {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(32px) saturate(1.5);
-  -webkit-backdrop-filter: blur(32px) saturate(1.5);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(64px) saturate(1.8);
+  -webkit-backdrop-filter: blur(64px) saturate(1.8);
   box-shadow: 
-    0 10px 30px -10px rgba(0, 0, 0, 0.5),
-    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    0 20px 50px -15px rgba(0, 0, 0, 0.6),
+    inset 0 1px 2px rgba(255, 255, 255, 0.08);
 }
 
 .silver-glass:hover {
   border-color: rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
 }
 
-/* REACTIVE SPOTLIGHT BORDER (The user's core request) */
+/* REACTIVE SPOTLIGHT BORDER (Intensified for Phase 2) */
 .border-spotlight {
   position: relative;
   background: linear-gradient(var(--color-surface-raised), var(--color-surface-raised)) padding-box,
               radial-gradient(
-                350px circle at var(--mouse-x) var(--mouse-y),
-                rgba(255, 255, 255, 0.4) 0%,
-                rgba(255, 255, 255, 0.05) 50%,
+                450px circle at var(--mouse-x) var(--mouse-y),
+                rgba(255, 255, 255, 0.6) 0%,
+                rgba(255, 255, 255, 0.15) 35%,
+                rgba(255, 255, 255, 0.05) 60%,
                 transparent 100%
               ) border-box;
   border: 1px solid transparent;
+  transition: border-color 0.5s ease;
 }
 
 .text-gradient-silver {
-  background: linear-gradient(180deg, #FFFFFF 0%, #94A3B8 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 50%, #94A3B8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+/* Shimmer Utility */
+.shimmer-silver {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-silver::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+}
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
 /* Glow Utilities */
 .silver-glow {
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 60px rgba(255, 255, 255, 0.15);
 }
 
 .purple-glow {
-  box-shadow: 0 0 40px rgba(123, 94, 255, 0.2);
+  box-shadow: 0 0 50px rgba(123, 94, 255, 0.2);
 }
 
-/* Mouse spotlight utility */
+/* Mouse spotlight utility (Interior Glow) */
 .mouse-spotlight-silver::before {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
   background: radial-gradient(
-    600px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 255, 0.04),
-    transparent 40%
+    500px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.05),
+    transparent 50%
   );
   z-index: 1;
   opacity: 0;
@@ -124,4 +148,8 @@ body::before {
 }
 .mouse-spotlight-silver:hover::before {
   opacity: 1;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
 }

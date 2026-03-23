@@ -1,3 +1,7 @@
+"use client";
+
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import FeaturesSection from "./components/FeaturesSection";
@@ -10,14 +14,16 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="bg-surface relative overflow-hidden">
         <HeroSection />
         <FeaturesSection />
         <DashboardPreview />
         <StatsSection />
         <DownloadSection />
       </main>
-      <Footer />
+      <div className="relative z-[100] bg-surface">
+        <Footer />
+      </div>
     </>
   );
 }

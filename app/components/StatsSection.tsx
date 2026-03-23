@@ -59,23 +59,26 @@ function Stat({ stat, index, active }: { stat: typeof stats[number]; index: numb
   const count = useCountUp(stat.value, 2000, active);
 
   return (
-    <div className="relative p-12 flex flex-col items-center justify-center text-center overflow-hidden bg-surface-raised/40 hover:bg-white/[0.03] transition-colors group">
+    <div className="relative p-12 flex flex-col items-center justify-center text-center overflow-hidden border-spotlight silver-glass group transition-all duration-700 hover:z-20">
       {/* Light sweep on entry */}
       <motion.div 
         initial={{ x: "-100%", opacity: 0 }}
         animate={active ? { x: "100%", opacity: 1 } : {}}
         transition={{ duration: 1.5, delay: index * 0.1, ease: "easeInOut" }}
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12"
+        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"
       />
       
       <div className="relative z-10 w-full pt-4">
-        <div className="text-[clamp(2.8rem,5vw,4rem)] font-extrabold tracking-tighter text-white mb-2 leading-none group-hover:scale-110 transition-transform duration-500" style={{ fontVariantNumeric: "tabular-nums" }}>
+        <div className="text-[clamp(3rem,6vw,4.5rem)] font-black tracking-tighter text-white mb-3 leading-none group-hover:scale-110 transition-transform duration-700" style={{ fontVariantNumeric: "tabular-nums" }}>
           {count}
-          <span className="text-white/40 text-2xl font-medium tracking-normal ml-1">{stat.suffix}</span>
+          <span className="text-white/30 text-2xl font-black tracking-normal ml-1">{stat.suffix}</span>
         </div>
-        <h3 className="text-[14px] font-semibold text-white/90 uppercase tracking-widest">{stat.label}</h3>
-        <p className="text-[13px] text-muted mt-2 font-medium">{stat.sub}</p>
+        <h3 className="text-[13px] font-black text-white uppercase tracking-[0.4em] mb-3">{stat.label}</h3>
+        <p className="text-[14px] text-muted font-medium max-w-[150px] mx-auto leading-tight">{stat.sub}</p>
       </div>
+
+      {/* Internal Reflection */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
     </div>
   );
 }

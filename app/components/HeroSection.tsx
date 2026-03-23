@@ -11,12 +11,12 @@ export default function HeroSection() {
     offset: ["start start", "end start"],
   });
 
-  // Parallax and fade transforms
-  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacityBg = useTransform(scrollYProgress, [0, 0.5], [1, 0.2]);
-  const scaleText = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
-  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const opacityText = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  // Parallax and fade transforms (tuned for Rolling Scroll)
+  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const opacityBg = useTransform(scrollYProgress, [0, 0.4], [1, 0.4]);
+  const scaleText = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const opacityText = useTransform(scrollYProgress, [0, 0.5], [1, 0.5]);
 
   // Framer motion variants for staggered text reveal
   const containerVars = {
