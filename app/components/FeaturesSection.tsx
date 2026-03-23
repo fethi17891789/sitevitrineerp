@@ -78,7 +78,7 @@ export default function FeaturesSection() {
         
         <div className="text-center mb-24">
           <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight mb-6">
-            L&apos;arsenal <span className="text-gradient-hero">industriel.</span>
+            L&apos;arsenal <span className="text-gradient-silver">industriel.</span>
           </h2>
           <p className="text-[17px] text-muted max-w-[600px] mx-auto leading-relaxed">
             Oubliez la fragmentation. Voici un écosystème conçu de la fondation 
@@ -94,23 +94,28 @@ export default function FeaturesSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
-              transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className={`${f.colSpan} magnetic-border rounded-[32px] overflow-hidden`}
+              transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] as any }}
+              className={`${f.colSpan} border-spotlight rounded-[40px] overflow-hidden`}
             >
-              <div className="mouse-spotlight relative h-full min-h-[280px] bg-board glass-panel p-8 md:p-10 flex flex-col group overflow-hidden">
+              <div className="relative h-full min-h-[320px] bg-surface-raised silver-glass p-10 md:p-12 flex flex-col group transition-all duration-700 hover:bg-white/[0.05]">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-[50px] rounded-full pointer-events-none transition-opacity opacity-0 group-hover:opacity-100" />
                 
-                {f.visual}
-
-                <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-primary-soft mb-6 group-hover:scale-110 transition-transform duration-500 will-change-transform shadow-lg">
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-8 group-hover:scale-110 group-hover:bg-white/10 transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)]">
                     {f.icon}
                   </div>
-                  <h3 className="text-[22px] font-semibold text-white mb-3 tracking-tight">
+                  <h3 className="text-[26px] font-bold text-white mb-4 tracking-tight group-hover:translate-x-1 transition-transform">
                     {f.title}
                   </h3>
-                  <p className="text-[15px] text-muted leading-relaxed max-w-[80%]">
+                  <p className="text-[15px] font-medium text-muted leading-relaxed transition-colors group-hover:text-white/80">
                     {f.desc}
                   </p>
+                  
+                  {/* Visual Decoration */}
+                  <div className="mt-auto pt-8 flex items-center gap-2 overflow-hidden opacity-40 group-hover:opacity-100 transition-opacity">
+                    <div className="h-[1px] flex-1 bg-gradient-to-r from-white/20 to-transparent" />
+                    <span className="text-[9px] uppercase tracking-[0.3em] font-black text-white/40">Silver Standard</span>
+                  </div>
                 </div>
               </div>
             </motion.div>

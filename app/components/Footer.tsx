@@ -5,10 +5,10 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-md bg-gradient-to-br from-primary to-primary-soft flex items-center justify-center shadow-[0_0_12px_rgba(123,94,255,0.2)]">
-              <span className="text-white font-black text-[11px]">S</span>
+            <div className="w-7 h-7 rounded-md bg-gradient-to-br from-white via-white/80 to-white/40 flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.2)] border border-white/20">
+              <span className="text-black font-black text-[11px]">S</span>
             </div>
-            <span className="text-[14px] font-semibold text-white/80">Skyra ERP</span>
+            <span className="text-[14px] font-black uppercase tracking-widest text-white">Skyra Engine</span>
           </div>
 
           {/* Links */}

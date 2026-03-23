@@ -16,7 +16,7 @@ export default function HeroSection() {
   const opacityBg = useTransform(scrollYProgress, [0, 0.5], [1, 0.2]);
   const scaleText = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
   const yText = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const opacityText = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
+  const opacityText = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   // Framer motion variants for staggered text reveal
   const containerVars = {
@@ -33,7 +33,7 @@ export default function HeroSection() {
       opacity: 1, 
       y: 0, 
       filter: "blur(0px)",
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as any } 
     },
   };
 
@@ -43,7 +43,7 @@ export default function HeroSection() {
       id="hero"
       className="relative min-h-[110vh] flex justify-center overflow-hidden bg-surface"
     >
-      {/* Dynamic Cinematic Background */}
+      {/* Silver Cinematic Background & Beams */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
         style={{ y: yBg, opacity: opacityBg }}
@@ -53,35 +53,40 @@ export default function HeroSection() {
           alt="Abstract Industry" 
           fill
           priority
-          className="object-cover opacity-40 mix-blend-screen"
+          className="object-cover opacity-20 grayscale mix-blend-screen"
         />
         
-        {/* Layered gradients to blend the image into the dark surface */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/80 via-transparent to-[#000000]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#000000_100%)] opacity-80" />
+        {/* Animated Silver Beams */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-[-50%] left-[-20%] w-[140%] h-[200%] bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03)_0%,transparent_50%)] animate-pulse-soft" />
+          <div className="absolute top-0 left-1/4 w-[1px] h-full bg-gradient-to-b from-transparent via-white/10 to-transparent skew-x-[-20deg] animate-pulse" />
+          <div className="absolute top-0 right-1/3 w-[1px] h-full bg-gradient-to-b from-transparent via-white/5 to-transparent skew-x-[-15deg]" />
+        </div>
+
+        <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--color-surface)_100%)] opacity-90" />
       </motion.div>
 
       {/* Main Content */}
       <motion.div
-        className="relative z-10 w-full max-w-[900px] px-6 flex flex-col items-center pt-[25vh] text-center"
+        className="relative z-30 w-full max-w-[900px] px-6 flex flex-col items-center pt-[25vh] text-center"
         style={{ scale: scaleText, y: yText, opacity: opacityText }}
       >
         {/* Announcement Pill */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-10"
         >
-          <div className="magnetic-border rounded-full p-[1px]">
-            <div className="glass-panel px-4 py-1.5 rounded-full flex items-center gap-2">
+          <div className="border-spotlight rounded-full p-[1px]">
+            <div className="silver-glass px-5 py-2 rounded-full flex items-center gap-3">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-blue opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-cyan"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-40"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-white shadow-[0_0_10px_white]"></span>
               </span>
-              <span className="text-[12px] font-medium tracking-wide text-white/90">
-                Skyra Engine v1.0 — Déploiement Cloud Actif
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/70">
+                Skyra Engine v1.0 — Déploiement Silver
               </span>
             </div>
           </div>
@@ -92,14 +97,15 @@ export default function HeroSection() {
           variants={containerVars}
           initial="hidden"
           animate="show"
-          className="overflow-hidden"
+          className="relative"
         >
-          <h1 className="text-[clamp(3rem,8vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.04em] text-white">
-            <motion.span variants={itemVars} className="block">La performance industrielle,</motion.span>
-            <motion.span variants={itemVars} className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-white/40">
-              élevée au rang d&apos;art.
+          <h1 className="text-[clamp(3.5rem,9vw,6rem)] font-extrabold leading-[0.95] tracking-[-0.05em] text-white">
+            <motion.span variants={itemVars} className="block">La performance,</motion.span>
+            <motion.span variants={itemVars} className="block text-gradient-silver">
+              élevée en Silver.
             </motion.span>
           </h1>
+          <div className="absolute -inset-x-20 -inset-y-10 bg-white/5 blur-[100px] rounded-full -z-10 opacity-30" />
         </motion.div>
 
         {/* Animated Subtitle */}
@@ -117,26 +123,26 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-12 flex flex-col sm:flex-row items-center gap-4"
+          transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] as any }}
+          className="mt-14 flex flex-col sm:flex-row items-center gap-6 relative z-50"
         >
-          <button className="relative group px-8 py-4 rounded-full bg-white text-black font-semibold text-[14px] leading-none tracking-wide hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.3)]">
-            <span className="relative z-10 flex items-center gap-2">
+          <button className="relative group px-10 py-5 rounded-full bg-white text-black font-bold text-[14px] leading-none tracking-widest uppercase hover:scale-105 active:scale-95 transition-all duration-500 shadow-[0_0_60px_rgba(255,255,255,0.4)] cursor-pointer overflow-hidden border-none focus:outline-none">
+            <span className="relative z-10 flex items-center gap-3">
               Explorer le moteur
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </span>
-            <div className="absolute inset-0 rounded-full bg-white blur-md opacity-20 group-hover:opacity-40 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent skew-x-12 translate-x-[-200%] group-hover:animate-[shine-silver_1.5s_infinite]" />
           </button>
           
-          <button className="relative px-8 py-4 rounded-full text-white font-medium text-[14px] leading-none tracking-wide overflow-hidden group">
-            <div className="absolute inset-0 glass-panel rounded-full group-hover:bg-white/5 transition-colors" />
-            <span className="relative z-10 flex items-center gap-2">
-              <svg className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor">
+          <button className="relative px-10 py-5 rounded-full text-white font-bold text-[14px] leading-none tracking-widest uppercase overflow-hidden group cursor-pointer active:scale-95 transition-all duration-300 border-spotlight focus:outline-none">
+            <div className="absolute inset-0 silver-glass rounded-full group-hover:bg-white/10 transition-colors" />
+            <span className="relative z-10 flex items-center gap-3">
+              <svg className="w-5 h-5 text-white/50 group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
               </svg>
-              Télécharger (0.00$)
+              Télécharger
             </span>
           </button>
         </motion.div>

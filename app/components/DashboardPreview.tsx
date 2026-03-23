@@ -40,11 +40,11 @@ export default function DashboardPreview() {
         <div className="text-center mb-16">
           <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] font-bold tracking-tight mb-6">
             Une fondation <br/>
-            <span className="text-gradient-hero">sans compromis.</span>
+            <span className="text-gradient-silver">sans compromis.</span>
           </h2>
           
           {/* Tab Selector (Apple Pill Style) */}
-          <div className="inline-flex items-center p-1.5 rounded-full glass-panel mx-auto mt-8 relative z-20">
+          <div className="inline-flex items-center p-1.5 rounded-full silver-glass border-spotlight mx-auto mt-8 relative z-20">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -55,8 +55,8 @@ export default function DashboardPreview() {
               >
                 {activeTab === tab.id && (
                   <motion.div
-                    layoutId="active-pill"
-                    className="absolute inset-0 bg-white/15 rounded-full border border-white/20 shadow-md"
+                    layoutId="active-pill-silver"
+                    className="absolute inset-0 bg-white rounded-full shadow-[0_0_20px_rgba(255,255,255,0.4)]"
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
@@ -67,21 +67,21 @@ export default function DashboardPreview() {
         </div>
 
         {/* Morphing Dashboard Mockup Area */}
-        <div className="relative mx-auto w-full max-w-[1000px] aspect-[16/9]">
-          <div className="magnetic-border rounded-[24px] absolute inset-0">
-            <div className="mouse-spotlight absolute inset-0 bg-board glass-panel rounded-[24px] overflow-hidden">
+        <div className="relative mx-auto w-full max-w-[1000px] aspect-[16/9] perspective-1000 group">
+          <div className="border-spotlight rounded-[32px] absolute inset-0 transition-transform duration-700 group-hover:scale-[1.02]">
+            <div className="absolute inset-0 bg-surface-raised silver-glass rounded-[32px] overflow-hidden">
               
               {/* Fake Mac OS Header */}
-              <div className="absolute top-0 left-0 right-0 h-12 border-b border-white/[0.04] flex items-center px-5 z-20 bg-black/20 backdrop-blur-md">
+              <div className="absolute top-0 left-0 right-0 h-14 border-b border-white/[0.08] flex items-center px-6 z-20 bg-white/5 backdrop-blur-2xl">
                 <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-[#333333] hover:bg-[#ff5f57] transition-colors" />
-                  <div className="w-3 h-3 rounded-full bg-[#333333] hover:bg-[#ffbd2e] transition-colors" />
-                  <div className="w-3 h-3 rounded-full bg-[#333333] hover:bg-[#28c840] transition-colors" />
+                  <div className="w-3 h-3 rounded-full bg-white/10 hover:bg-[#ff5f57] transition-colors" />
+                  <div className="w-3 h-3 rounded-full bg-white/10 hover:bg-[#ffbd2e] transition-colors" />
+                  <div className="w-3 h-3 rounded-full bg-white/10 hover:bg-[#28c840] transition-colors" />
                 </div>
               </div>
 
               {/* Dynamic Content Morph */}
-              <div className="absolute inset-0 top-12">
+              <div className="absolute inset-0 top-14">
                 <AnimatePresence mode="popLayout">
                   {tabs.map((tab) => (
                     tab.id === activeTab && (
@@ -90,7 +90,7 @@ export default function DashboardPreview() {
                         initial={{ opacity: 0, scale: 0.98, filter: "blur(10px)" }}
                         animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                         exit={{ opacity: 0, scale: 1.02, filter: "blur(10px)" }}
-                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as any }}
                         className="absolute inset-0"
                       >
                         {tab.image}
@@ -102,8 +102,8 @@ export default function DashboardPreview() {
             </div>
           </div>
           
-          {/* Subdued shadow directly below frame */}
-          <div className="absolute -bottom-10 left-10 right-10 h-20 bg-primary/20 blur-[60px] -z-10" />
+          {/* External Glows */}
+          <div className="absolute -inset-20 bg-white/5 blur-[120px] rounded-full pointer-events-none -z-10 group-hover:opacity-100 opacity-40 transition-opacity" />
         </div>
 
       </div>

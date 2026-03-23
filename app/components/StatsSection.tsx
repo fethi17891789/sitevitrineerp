@@ -41,12 +41,14 @@ export default function StatsSection() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-[2px] bg-white/5 border border-white/5 rounded-[32px] overflow-hidden backdrop-blur-3xl"
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as any }}
+          className="border-spotlight rounded-[40px] overflow-hidden"
         >
-          {stats.map((s, i) => (
-            <Stat key={s.label} stat={s} index={i} active={inView} />
-          ))}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 silver-glass">
+            {stats.map((s, i) => (
+              <Stat key={s.label} stat={s} index={i} active={inView} />
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
@@ -57,7 +59,7 @@ function Stat({ stat, index, active }: { stat: typeof stats[number]; index: numb
   const count = useCountUp(stat.value, 2000, active);
 
   return (
-    <div className="mouse-spotlight relative bg-board p-10 flex flex-col items-center justify-center text-center overflow-hidden">
+    <div className="relative p-12 flex flex-col items-center justify-center text-center overflow-hidden bg-surface-raised/40 hover:bg-white/[0.03] transition-colors group">
       {/* Light sweep on entry */}
       <motion.div 
         initial={{ x: "-100%", opacity: 0 }}
@@ -67,9 +69,9 @@ function Stat({ stat, index, active }: { stat: typeof stats[number]; index: numb
       />
       
       <div className="relative z-10 w-full pt-4">
-        <div className="text-[clamp(2.5rem,4vw,3.5rem)] font-bold tracking-tighter text-white mb-2 leading-none" style={{ fontVariantNumeric: "tabular-nums" }}>
+        <div className="text-[clamp(2.8rem,5vw,4rem)] font-extrabold tracking-tighter text-white mb-2 leading-none group-hover:scale-110 transition-transform duration-500" style={{ fontVariantNumeric: "tabular-nums" }}>
           {count}
-          <span className="text-primary-soft text-2xl font-medium tracking-normal ml-0.5">{stat.suffix}</span>
+          <span className="text-white/40 text-2xl font-medium tracking-normal ml-1">{stat.suffix}</span>
         </div>
         <h3 className="text-[14px] font-semibold text-white/90 uppercase tracking-widest">{stat.label}</h3>
         <p className="text-[13px] text-muted mt-2 font-medium">{stat.sub}</p>
