@@ -57,9 +57,9 @@ export default function Navbar() {
           <div className="flex items-center gap-5">
             <a
               href="#download"
-              className="hidden sm:inline-flex text-[11px] font-black uppercase tracking-[0.3em] text-black px-8 py-3 rounded-full bg-white shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] hover:scale-110 active:scale-95 transition-all cursor-pointer"
+              className="hidden sm:inline-flex text-[10px] font-black uppercase tracking-[0.2em] text-black px-6 py-3 rounded-full bg-white shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] hover:scale-110 active:scale-95 transition-all cursor-pointer no-underline items-center"
             >
-              Démarrer
+              Démarrer V1.0 BETA
             </a>
             <button
               onClick={() => setOpen(!open)}
