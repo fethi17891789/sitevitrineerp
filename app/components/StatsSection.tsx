@@ -48,7 +48,7 @@ const itemVars = {
 
 export default function StatsSection() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-33% 0px -33% 0px" });
 
   return (
     <section className="relative py-32 bg-surface">

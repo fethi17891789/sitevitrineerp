@@ -41,7 +41,7 @@ export default function DownloadSection() {
               variants={containerVars}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, margin: "-33% 0px -33% 0px" }}
               className="relative z-10 flex flex-col justify-center items-center"
             >
               <motion.h2 variants={itemVars} className="text-[clamp(1.5rem,7vw,4.5rem)] font-black tracking-tighter mb-10 text-white leading-[1] text-gradient-silver text-center">

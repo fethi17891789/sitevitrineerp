@@ -58,7 +58,7 @@ export default function DashboardPreview() {
            variants={containerVars}
            initial="hidden"
            whileInView="visible"
-           viewport={{ once: true, margin: "-100px" }}
+           viewport={{ once: true, margin: "-33% 0px -33% 0px" }}
         >
           <div className="text-center mb-24">
             <motion.h2 
