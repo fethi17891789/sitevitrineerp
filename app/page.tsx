@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import FeaturesSection from "./components/FeaturesSection";
@@ -11,6 +10,14 @@ import DownloadSection from "./components/DownloadSection";
 import Footer from "./components/Footer";
 
 export default function Home() {
+  useEffect(() => {
+    // Force scroll to top on refresh
+    window.scrollTo(0, 0);
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  }, []);
+
   return (
     <>
       <Navbar />
