@@ -70,64 +70,87 @@ const features = [
     )
   }
 ];
+const containerVars = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+  },
+};
+
+const itemVars = {
+  hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    filter: "blur(0px)",
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as any } 
+  },
+};
 
 export default function FeaturesSection() {
   return (
     <section id="features" className="relative py-40 bg-surface">
       <div className="max-w-[1100px] mx-auto px-6 relative z-10">
-        <div className="text-center mb-24">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-[clamp(2.5rem,5vw,4rem)] font-black tracking-tight mb-8 leading-[1.1]"
-          >
-            L&apos;arsenal <span className="text-gradient-silver">industriel.</span>
-          </motion.h2>
-          <p className="text-[17px] text-muted max-w-[600px] mx-auto leading-relaxed font-medium">
-            Oubliez la fragmentation. Voici un écosystème conçu de la fondation 
-            vers le haut pour l&apos;efficacité chirurgicale de votre supply chain.
-          </p>
-        </div>
-
-        {/* Bento Box Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((f, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={{ rotateX: -5, rotateY: 5, scale: 1.02 }}
-              viewport={{ once: true, margin: "-10%" }}
-              transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] as any }}
-              className={`${f.colSpan} border-spotlight rounded-[48px] overflow-hidden perspective-1000 group`}
+        <motion.div
+          variants={containerVars}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <div className="text-center mb-24">
+            <motion.h2 
+              variants={itemVars}
+              className="text-[clamp(2.5rem,5vw,4rem)] font-black tracking-tight mb-8 leading-[1.1]"
             >
-              <div className="relative h-full min-h-[360px] silver-glass p-12 flex flex-col transition-all duration-700">
-                <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 blur-[80px] rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
-                
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-10 group-hover:rotate-12 group-hover:bg-white/10 transition-all duration-500 shadow-[0_0_40px_rgba(255,255,255,0.1)]">
-                    {f.icon}
-                  </div>
-                  <h3 className="text-[28px] font-black text-white mb-4 tracking-tighter group-hover:text-gradient-silver transition-all">
-                    {f.title}
-                  </h3>
-                  <p className="text-[16px] font-medium text-muted leading-relaxed transition-colors group-hover:text-white/80">
-                    {f.desc}
-                  </p>
-                  
-                  {/* Visual Decoration */}
-                  <div className="mt-auto pt-10 flex items-center gap-3 overflow-hidden opacity-30 group-hover:opacity-100 transition-all">
-                    <div className="h-[1px] w-12 bg-gradient-to-r from-white/40 to-transparent group-hover:w-20 transition-all" />
-                    <span className="text-[10px] uppercase tracking-[0.4em] font-black text-white/40">Silver Standard</span>
-                  </div>
-                </div>
+              L&apos;arsenal <span className="text-gradient-silver">industriel.</span>
+            </motion.h2>
+            <motion.p variants={itemVars} className="text-[17px] text-muted max-w-[600px] mx-auto leading-relaxed font-medium">
+              Oubliez la fragmentation. Voici un écosystème conçu de la fondation 
+              vers le haut pour l&apos;efficacité chirurgicale de votre supply chain.
+            </motion.p>
+          </div>
 
-                {/* Shimmer on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent skew-x-12 translate-x-[-200%] group-hover:animate-[shine-silver_2s_infinite] pointer-events-none" />
-              </div>
-            </motion.div>
-          ))}
-        </div>
+          {/* Bento Box Grid */}
+          <motion.div 
+            variants={containerVars}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {features.map((f, i) => (
+              <motion.div
+                key={i}
+                variants={itemVars}
+                whileHover={{ rotateX: -5, rotateY: 5, scale: 1.02 }}
+                className={`${f.colSpan} border-spotlight rounded-[48px] overflow-hidden perspective-1000 group`}
+              >
+                <div className="relative h-full min-h-[360px] silver-glass p-12 flex flex-col transition-all duration-700">
+                  <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 blur-[80px] rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
+                  
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-10 group-hover:rotate-12 group-hover:bg-white/10 transition-all duration-500 shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+                      {f.icon}
+                    </div>
+                    <h3 className="text-[28px] font-black text-white mb-4 tracking-tighter group-hover:text-gradient-silver transition-all">
+                      {f.title}
+                    </h3>
+                    <p className="text-[16px] font-medium text-muted leading-relaxed transition-colors group-hover:text-white/80">
+                      {f.desc}
+                    </p>
+                    
+                    {/* Visual Decoration */}
+                    <div className="mt-auto pt-10 flex items-center gap-3 overflow-hidden opacity-30 group-hover:opacity-100 transition-all">
+                      <div className="h-[1px] w-12 bg-gradient-to-r from-white/40 to-transparent group-hover:w-20 transition-all" />
+                      <span className="text-[10px] uppercase tracking-[0.4em] font-black text-white/40">Silver Standard</span>
+                    </div>
+                  </div>
+
+                  {/* Shimmer on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent skew-x-12 translate-x-[-200%] group-hover:animate-[shine-silver_2s_infinite] pointer-events-none" />
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

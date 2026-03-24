@@ -28,6 +28,24 @@ const stats = [
   { value: 0, suffix: " downtime", label: "Maintenance", sub: "Déploiement à chaud" },
 ];
 
+const containerVars = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1, delayChildren: 0.1 },
+  },
+};
+
+const itemVars = {
+  hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    filter: "blur(0px)",
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as any } 
+  },
+};
+
 export default function StatsSection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
@@ -39,16 +57,21 @@ export default function StatsSection() {
 
       <div ref={ref} className="max-w-[1100px] mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={inView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as any }}
+          initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
+          animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as any }}
           className="border-spotlight rounded-[40px] overflow-hidden"
         >
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 silver-glass">
+          <motion.div 
+            variants={containerVars}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            className="grid grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 silver-glass"
+          >
             {stats.map((s, i) => (
               <Stat key={s.label} stat={s} index={i} active={inView} />
             ))}
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
@@ -59,7 +82,10 @@ function Stat({ stat, index, active }: { stat: typeof stats[number]; index: numb
   const count = useCountUp(stat.value, 2000, active);
 
   return (
-    <div className="relative p-12 flex flex-col items-center justify-center text-center overflow-hidden border-spotlight silver-glass group transition-all duration-700 hover:z-20">
+    <motion.div 
+      variants={itemVars}
+      className="relative p-12 flex flex-col items-center justify-center text-center overflow-hidden border-spotlight silver-glass group transition-all duration-700 hover:z-20"
+    >
       {/* Light sweep on entry */}
       <motion.div 
         initial={{ x: "-100%", opacity: 0 }}
@@ -79,6 +105,6 @@ function Stat({ stat, index, active }: { stat: typeof stats[number]; index: numb
 
       {/* Internal Reflection */}
       <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-    </div>
+    </motion.div>
   );
 }
