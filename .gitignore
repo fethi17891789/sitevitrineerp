@@ -39,6 +39,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# installers (too large for GitHub)
-/public/downloads/SKYRA_Setup.exe
