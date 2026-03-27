@@ -54,7 +54,7 @@ export default function DownloadSection() {
 
               <motion.a 
                 variants={itemVars}
-                href="/downloads/SKYRA_Setup.exe"
+                href="https://github.com/fethi17891789/erp_pfc_20252026/releases/download/V1.0.0/SKYRA_Setup.exe"
                 download="SKYRA_Setup.exe"
                 className="relative group px-16 py-8 rounded-full bg-white text-black font-black text-[16px] leading-none tracking-[0.3em] uppercase hover:scale-110 active:scale-95 transition-all duration-700 shadow-[0_0_80px_rgba(255,255,255,0.5)] cursor-pointer overflow-hidden border-none focus:outline-none focus-visible:ring-4 focus-visible:ring-white flex flex-col items-center no-underline"
               >
