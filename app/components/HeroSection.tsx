@@ -141,7 +141,7 @@ export default function HeroSection() {
           </button>
 
           <a
-            href="/downloads/SKYRA_Setup.exe"
+            href="https://github.com/fethi17891789/erp_pfc_20252026/releases/download/V1.0.0/SKYRA_Setup.exe"
             download="SKYRA_Setup.exe"
             className="relative px-10 py-5 rounded-full text-white font-bold text-[14px] leading-none tracking-widest uppercase overflow-hidden group cursor-pointer active:scale-95 transition-all duration-300 border-spotlight focus:outline-none no-underline flex items-center justify-center min-w-[200px]"
           >
