@@ -90,7 +90,7 @@ export default function HeroSection() {
                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white shadow-[0_0_10px_white]"></span>
                </span>
                <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-shine-silver">
-                 Skyra Engine v1.0 — BETA RELEASE
+                 Skyra Engine v1.1 — BETA RELEASE
                </span>
              </div>
            </div>
@@ -141,7 +141,7 @@ export default function HeroSection() {
           </button>
 
           <a
-            href="https://github.com/fethi17891789/erp_pfc_20252026/releases/download/V1.0.0/SKYRA_Setup.exe"
+            href="https://github.com/fethi17891789/erp_pfc_20252026/releases/download/V1.1.0/SKYRA_Setup.exe"
             download="SKYRA_Setup.exe"
             className="relative px-10 py-5 rounded-full text-white font-bold text-[14px] leading-none tracking-widest uppercase overflow-hidden group cursor-pointer active:scale-95 transition-all duration-300 border-spotlight focus:outline-none no-underline flex items-center justify-center min-w-[200px]"
           >
@@ -153,7 +153,7 @@ export default function HeroSection() {
                 </svg>
                 Télécharger
               </span>
-              <span className="block text-[8px] mt-1 opacity-40 tracking-[0.4em]">V1.0 BETA</span>
+              <span className="block text-[8px] mt-1 opacity-40 tracking-[0.4em]">V1.1 BETA</span>
             </span>
           </a>
         </motion.div>
