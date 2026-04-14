@@ -54,7 +54,7 @@ export default function DownloadSection() {
 
               <motion.a 
                 variants={itemVars}
-                href="https://github.com/fethi17891789/erp_pfc_20252026/releases/download/V1.0.0/SKYRA_Setup.exe"
+                href="https://github.com/fethi17891789/erp_pfc_20252026/releases/download/V1.1.0/SKYRA_Setup.exe"
                 download="SKYRA_Setup.exe"
                 className="relative group px-16 py-8 rounded-full bg-white text-black font-black text-[16px] leading-none tracking-[0.3em] uppercase hover:scale-110 active:scale-95 transition-all duration-700 shadow-[0_0_80px_rgba(255,255,255,0.5)] cursor-pointer overflow-hidden border-none focus:outline-none focus-visible:ring-4 focus-visible:ring-white flex flex-col items-center no-underline"
               >
@@ -64,7 +64,7 @@ export default function DownloadSection() {
                   </svg>
                   Téléchargement Direct
                 </span>
-                <span className="relative z-10 block text-[10px] mt-2 opacity-50 tracking-[0.5em]">V1.0 BETA</span>
+                <span className="relative z-10 block text-[10px] mt-2 opacity-50 tracking-[0.5em]">V1.1 BETA</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent skew-x-12 translate-x-[-200%] group-hover:animate-[shine-silver_1.5s_infinite]" />
               </motion.a>
               
