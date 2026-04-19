@@ -1,6 +1,14 @@
+"use client";
+
+import { useState } from "react";
+import ContactModal from "./ContactModal";
+
 export default function Footer() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <footer className="relative bg-surface border-t border-white/10 overflow-hidden pt-24 pb-12">
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       
       {/* Massive Watermark Symbol Background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none flex items-center justify-center opacity-[0.02] mix-blend-screen overflow-hidden">
@@ -49,11 +57,16 @@ export default function Footer() {
           <div>
             <h4 className="text-[12px] font-black uppercase tracking-widest text-white mb-6">Légal</h4>
             <ul className="space-y-4">
-              {['Conditions Générales', 'Politique de Confidentialité', 'Contact'].map((item) => (
+              {['Conditions Générales', 'Politique de Confidentialité'].map((item) => (
                 <li key={item}>
                   <a href="#" className="text-[13px] text-muted hover:text-white transition-colors">{item}</a>
                 </li>
               ))}
+              <li>
+                <button onClick={() => setIsModalOpen(true)} className="text-[13px] text-muted hover:text-white transition-colors">
+                  Contact
+                </button>
+              </li>
             </ul>
           </div>
 

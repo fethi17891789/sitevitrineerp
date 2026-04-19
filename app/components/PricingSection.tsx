@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
+import ContactModal from "./ContactModal";
 
 const plans = [
   {
@@ -31,8 +33,11 @@ const plans = [
 ];
 
 export default function PricingSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="relative py-32 bg-surface overflow-hidden">
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <div className="max-w-[1000px] mx-auto px-6 relative z-10">
         
         <motion.div 
@@ -93,7 +98,10 @@ export default function PricingSection() {
                   ))}
                 </ul>
 
-                <button className={`w-full py-4 rounded-xl text-[13px] font-black uppercase tracking-widest transition-all duration-300 relative overflow-hidden group/btn ${plan.highlight ? 'bg-white text-black hover:scale-[1.02] shadow-[0_0_30px_rgba(255,255,255,0.2)]' : 'silver-glass text-white/80 hover:text-white border-spotlight hover:scale-[1.02]'}`}>
+                <button 
+                  onClick={() => setIsModalOpen(true)}
+                  className={`w-full py-4 rounded-xl text-[13px] font-black uppercase tracking-widest transition-all duration-300 relative overflow-hidden group/btn ${plan.highlight ? 'bg-white text-black hover:scale-[1.02] shadow-[0_0_30px_rgba(255,255,255,0.2)]' : 'silver-glass text-white/80 hover:text-white border-spotlight hover:scale-[1.02]'}`}
+                >
                   <span className="relative z-10">Contacter l'équipe</span>
                   {plan.highlight && (
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-transparent skew-x-12 translate-x-[-150%] group-hover/btn:animate-[shine-silver_1.5s_infinite]" />

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ContactModal from "./ContactModal";
 
 const links = [
   { label: "Accueil", href: "#hero" },
@@ -13,6 +14,7 @@ const links = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 40);
@@ -22,6 +24,7 @@ export default function Navbar() {
 
   return (
     <>
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
       <motion.header
         initial={{ y: -80 }}
         animate={{ y: 0 }}
@@ -43,6 +46,12 @@ export default function Navbar() {
           </a>
 
           <div className="hidden lg:flex items-center gap-2">
+            <button
+               onClick={() => setIsContactOpen(true)}
+               className="px-6 py-2 text-[11px] font-bold uppercase tracking-[0.3em] text-white/40 hover:text-white transition-all rounded-full hover:bg-white/5"
+            >
+              Contact
+            </button>
             {links.map((l) => (
               <a
                 key={l.href}
@@ -85,6 +94,12 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-surface/95 backdrop-blur-2xl pt-24 md:hidden"
           >
             <nav className="flex flex-col items-center gap-6">
+              <button 
+                onClick={() => { setOpen(false); setIsContactOpen(true); }}
+                className="text-lg text-muted hover:text-white transition-colors"
+              >
+                Contact
+              </button>
               {links.map((l, i) => (
                 <motion.a
                   key={l.href}
