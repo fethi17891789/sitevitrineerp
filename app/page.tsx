@@ -3,8 +3,12 @@
 import { useEffect, useRef } from "react";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
+import TrustBanner from "./components/TrustBanner";
+import PerspectiveSection from "./components/PerspectiveSection";
 import FeaturesSection from "./components/FeaturesSection";
 import DashboardPreview from "./components/DashboardPreview";
+import ComparisonSection from "./components/ComparisonSection";
+import TestimonialsSection from "./components/TestimonialsSection";
 import StatsSection from "./components/StatsSection";
 import DownloadSection from "./components/DownloadSection";
 import Footer from "./components/Footer";
@@ -23,8 +27,12 @@ export default function Home() {
       <Navbar />
       <main className="bg-surface relative overflow-hidden">
         <HeroSection />
+        <TrustBanner />
+        <PerspectiveSection />
         <FeaturesSection />
         <DashboardPreview />
+        <ComparisonSection />
+        <TestimonialsSection />
         <StatsSection />
         <DownloadSection />
       </main>
