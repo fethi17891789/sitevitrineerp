@@ -103,7 +103,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                        <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                      </div>
                      <p className="text-[18px] font-black text-white mb-2">Message transmis</p>
-                     <p className="text-[13px] text-muted font-medium max-w-[280px]">Vérifiez votre boîte mail meslifethi977@gmail.com pour confirmer l'activation du système s'il s'agit du tout premier envoi.</p>
+                     <p className="text-[13px] text-muted font-medium max-w-[280px]">L'équipe Skyra ERP vous recontactera dans les plus brefs délais.</p>
                    </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
