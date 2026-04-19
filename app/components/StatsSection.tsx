@@ -66,7 +66,7 @@ export default function StatsSection() {
             variants={containerVars}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 silver-glass"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 silver-glass"
           >
             {stats.map((s, i) => (
               <Stat key={s.label} stat={s} index={i} active={inView} />
@@ -84,7 +84,7 @@ function Stat({ stat, index, active }: { stat: typeof stats[number]; index: numb
   return (
     <motion.div 
       variants={itemVars}
-      className="relative p-12 flex flex-col items-center justify-center text-center overflow-hidden border-spotlight silver-glass group transition-all duration-700 hover:z-20"
+      className="relative p-8 md:p-12 flex flex-col items-center justify-center text-center overflow-hidden border-spotlight silver-glass group transition-all duration-700 hover:z-20"
     >
       {/* Light sweep on entry */}
       <motion.div 
@@ -95,7 +95,7 @@ function Stat({ stat, index, active }: { stat: typeof stats[number]; index: numb
       />
       
       <div className="relative z-10 w-full pt-4">
-        <div className="text-[clamp(3rem,6vw,4.5rem)] font-black tracking-tighter text-white mb-3 leading-none group-hover:scale-110 transition-transform duration-700" style={{ fontVariantNumeric: "tabular-nums" }}>
+        <div className="text-[clamp(2.5rem,8vw,4.5rem)] font-black tracking-tighter text-white mb-3 leading-none group-hover:scale-110 transition-transform duration-700" style={{ fontVariantNumeric: "tabular-nums" }}>
           {count}
           <span className="text-white/30 text-2xl font-black tracking-normal ml-1">{stat.suffix}</span>
         </div>

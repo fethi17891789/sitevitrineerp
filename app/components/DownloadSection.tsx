@@ -35,7 +35,7 @@ export default function DownloadSection() {
         className="max-w-[900px] mx-auto px-8 text-center relative z-10"
       >
         <div className="border-spotlight rounded-[64px] p-[1px] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.8)]">
-          <div className="silver-glass rounded-[64px] p-20 md:p-32 relative overflow-hidden group">
+          <div className="silver-glass rounded-[40px] md:rounded-[64px] p-8 py-16 md:p-20 lg:p-32 relative overflow-hidden group">
             
             <motion.div 
               variants={containerVars}
@@ -56,7 +56,7 @@ export default function DownloadSection() {
                 variants={itemVars}
                 href="https://github.com/fethi17891789/erp_pfc_20252026/releases/download/V1.1.0/SKYRA_Setup.exe"
                 download="SKYRA_Setup.exe"
-                className="relative group px-16 py-8 rounded-full bg-white text-black font-black text-[16px] leading-none tracking-[0.3em] uppercase hover:scale-110 active:scale-95 transition-all duration-700 shadow-[0_0_80px_rgba(255,255,255,0.5)] cursor-pointer overflow-hidden border-none focus:outline-none focus-visible:ring-4 focus-visible:ring-white flex flex-col items-center no-underline"
+                className="relative group px-8 py-6 md:px-16 md:py-8 rounded-full bg-white text-black font-black text-[12px] md:text-[16px] leading-none tracking-[0.2em] md:tracking-[0.3em] uppercase hover:scale-110 active:scale-95 transition-all duration-700 shadow-[0_0_80px_rgba(255,255,255,0.5)] cursor-pointer overflow-hidden border-none focus:outline-none focus-visible:ring-4 focus-visible:ring-white flex flex-col items-center no-underline w-full sm:w-auto"
               >
                 <span className="relative z-10 flex items-center gap-4">
                   <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">

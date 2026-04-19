@@ -84,12 +84,12 @@ export default function HeroSection() {
            className="mb-10 mt-6"
          >
            <div className="border-spotlight rounded-full p-[1px]">
-             <div className="silver-glass px-5 py-2 rounded-full flex items-center gap-3">
+             <div className="silver-glass px-3 py-2 sm:px-5 sm:py-2 rounded-full flex items-center gap-2 sm:gap-3">
                <span className="relative flex h-2 w-2">
                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-40"></span>
                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white shadow-[0_0_10px_white]"></span>
                </span>
-               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-shine-silver">
+               <span className="text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-shine-silver">
                  Skyra Engine v1.1 — BETA RELEASE
                </span>
              </div>
@@ -103,7 +103,7 @@ export default function HeroSection() {
           animate="show"
           className="relative"
         >
-          <h1 className="text-[clamp(3.5rem,9vw,6rem)] font-extrabold leading-[0.95] tracking-[-0.05em] text-white">
+          <h1 className="text-[clamp(2.5rem,10vw,6rem)] font-extrabold leading-[0.95] tracking-[-0.05em] text-white">
             <motion.span variants={itemVars} className="block whitespace-nowrap">La gestion d&apos;entreprise,</motion.span>
             <motion.span variants={itemVars} className="block text-gradient-silver">
               repensée.
@@ -130,7 +130,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] as any }}
           className="mt-14 flex flex-col sm:flex-row items-center gap-6 relative z-50"
         >
-          <button className="relative group px-10 py-5 rounded-full bg-white text-black font-bold text-[14px] leading-none tracking-widest uppercase hover:scale-105 active:scale-95 transition-all duration-500 shadow-[0_0_60px_rgba(255,255,255,0.4)] cursor-pointer overflow-hidden border-none focus:outline-none">
+          <button className="relative group px-6 py-4 sm:px-10 sm:py-5 rounded-full bg-white text-black font-bold text-[12px] sm:text-[14px] leading-none tracking-widest uppercase hover:scale-105 active:scale-95 transition-all duration-500 shadow-[0_0_60px_rgba(255,255,255,0.4)] cursor-pointer overflow-hidden border-none focus:outline-none w-full sm:w-auto flex justify-center">
             <span className="relative z-10 flex items-center gap-3">
               Explorer le moteur
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -143,7 +143,7 @@ export default function HeroSection() {
           <a
             href="https://github.com/fethi17891789/erp_pfc_20252026/releases/download/V1.1.0/SKYRA_Setup.exe"
             download="SKYRA_Setup.exe"
-            className="relative px-10 py-5 rounded-full text-white font-bold text-[14px] leading-none tracking-widest uppercase overflow-hidden group cursor-pointer active:scale-95 transition-all duration-300 border-spotlight focus:outline-none no-underline flex items-center justify-center min-w-[200px]"
+            className="relative px-6 py-4 sm:px-10 sm:py-5 rounded-full text-white font-bold text-[12px] sm:text-[14px] leading-none tracking-widest uppercase overflow-hidden group cursor-pointer active:scale-95 transition-all duration-300 border-spotlight focus:outline-none no-underline flex items-center justify-center min-w-[200px] w-full sm:w-auto"
           >
             <div className="absolute inset-0 silver-glass rounded-full group-hover:bg-white/10 transition-colors" />
             <span className="relative z-10 flex flex-col items-center">

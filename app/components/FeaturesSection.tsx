@@ -101,7 +101,7 @@ export default function FeaturesSection() {
           <div className="text-center mb-24">
             <motion.h2 
               variants={itemVars}
-              className="text-[clamp(2.5rem,5vw,4rem)] font-black tracking-tight mb-8 leading-[1.1]"
+              className="text-[clamp(2rem,8vw,4rem)] font-black tracking-tight mb-8 leading-[1.1]"
             >
               L&apos;arsenal <span className="text-gradient-silver">industriel.</span>
             </motion.h2>
@@ -123,7 +123,7 @@ export default function FeaturesSection() {
                 whileHover={{ rotateX: -5, rotateY: 5, scale: 1.02 }}
                 className={`${f.colSpan} border-spotlight rounded-[48px] overflow-hidden perspective-1000 group`}
               >
-                <div className="relative h-full min-h-[360px] silver-glass p-12 flex flex-col transition-all duration-700">
+                <div className="relative h-full min-h-[280px] md:min-h-[360px] silver-glass p-6 md:p-12 flex flex-col transition-all duration-700">
                   <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 blur-[80px] rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity" />
                   
                   <div className="relative z-10 flex flex-col h-full">
@@ -138,7 +138,7 @@ export default function FeaturesSection() {
                     </p>
                     
                     {/* Visual Decoration */}
-                    <div className="mt-auto pt-10 flex items-center gap-3 overflow-hidden opacity-30 group-hover:opacity-100 transition-all">
+                    <div className="mt-8 pt-8 flex items-center gap-3 overflow-hidden opacity-30 group-hover:opacity-100 transition-all">
                       <div className="h-[1px] w-12 bg-gradient-to-r from-white/40 to-transparent group-hover:w-20 transition-all" />
                       <span className="text-[10px] uppercase tracking-[0.4em] font-black text-white/40">Silver Standard</span>
                     </div>
