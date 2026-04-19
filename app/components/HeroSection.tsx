@@ -46,6 +46,7 @@ export default function HeroSection() {
       ref={containerRef}
       id="hero"
       className="relative min-h-screen flex justify-center overflow-hidden bg-surface"
+      style={{ position: 'relative' }}
     >
       {/* Cinematic Background & Beams */}
       <motion.div
