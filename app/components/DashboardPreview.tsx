@@ -70,12 +70,12 @@ export default function DashboardPreview() {
             </motion.h2>
             
             {/* Tab Selector (Apple Pill Style) */}
-            <motion.div variants={itemVars} className="flex md:inline-flex max-w-[90vw] md:max-w-none overflow-x-auto no-scrollbar items-center p-2 rounded-full silver-glass border-spotlight mx-auto mt-4 relative z-20 shadow-[0_0_50px_rgba(255,255,255,0.1)]">
+            <motion.div variants={itemVars} className="flex sm:inline-flex flex-wrap sm:flex-nowrap justify-center items-center p-2 rounded-[2rem] sm:rounded-full silver-glass border-spotlight mx-auto mt-4 relative z-20 shadow-[0_0_50px_rgba(255,255,255,0.1)] gap-1 sm:gap-0">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`relative shrink-0 px-5 py-3 sm:px-8 sm:py-3 text-[10px] sm:text-[12px] font-black uppercase tracking-[0.3em] rounded-full outline-none transition-all duration-500 z-10 cursor-pointer ${
+                  className={`relative w-full sm:w-auto px-4 py-3 sm:px-8 sm:py-3 text-[10px] sm:text-[12px] font-black uppercase tracking-widest sm:tracking-[0.3em] rounded-full outline-none transition-all duration-500 z-10 cursor-pointer ${
                     activeTab === tab.id ? "text-black scale-[1.02] sm:scale-105" : "text-white/40 hover:text-white"
                   }`}
                 >

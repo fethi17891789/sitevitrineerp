@@ -104,7 +104,7 @@ export default function HeroSection() {
           className="relative"
         >
           <h1 className="text-[clamp(2.5rem,10vw,6rem)] font-extrabold leading-[0.95] tracking-[-0.05em] text-white">
-            <motion.span variants={itemVars} className="block whitespace-nowrap">La gestion d&apos;entreprise,</motion.span>
+            <motion.span variants={itemVars} className="block whitespace-normal sm:whitespace-nowrap">La gestion d&apos;entreprise,</motion.span>
             <motion.span variants={itemVars} className="block text-gradient-silver">
               repensée.
             </motion.span>
