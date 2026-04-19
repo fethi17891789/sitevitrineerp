@@ -62,38 +62,40 @@ export default function ComparisonSection() {
           transition={{ duration: 1 }}
           className="border-spotlight rounded-[32px] overflow-hidden shadow-[0_0_80px_rgba(255,255,255,0.05)]"
         >
-          <div className="silver-glass bg-white/[0.01]">
-            <div className="grid grid-cols-3 border-b border-white/10 bg-white/5">
-              <div className="p-6 font-bold text-white/50 uppercase tracking-widest text-[12px] flex items-center">
-                Fonctionnalité
+          <div className="silver-glass bg-white/[0.01] w-full overflow-x-auto overflow-y-hidden relative">
+            <div className="min-w-[650px] md:min-w-full">
+              <div className="grid grid-cols-3 border-b border-white/10 bg-white/5">
+                <div className="p-6 font-bold text-white/50 uppercase tracking-widest text-[12px] flex items-center">
+                  Fonctionnalité
+                </div>
+                <div className="p-6 font-black text-white uppercase tracking-widest text-[14px] flex items-center border-l border-white/10 bg-white/5">
+                  Skyra ERP
+                </div>
+                <div className="p-6 font-bold text-white/50 uppercase tracking-widest text-[12px] flex items-center border-l border-white/10">
+                  SaaS Traditionnels
+                </div>
               </div>
-              <div className="p-6 font-black text-white uppercase tracking-widest text-[14px] flex items-center border-l border-white/10 bg-white/5">
-                Skyra ERP
-              </div>
-              <div className="p-6 font-bold text-white/50 uppercase tracking-widest text-[12px] flex items-center border-l border-white/10">
-                SaaS Traditionnels
-              </div>
-            </div>
 
-            {advantages.map((item, i) => (
-              <div key={i} className="grid grid-cols-3 border-b border-white/[0.05] last:border-b-0 hover:bg-white/[0.02] transition-colors">
-                <div className="p-6 text-[14px] text-white/80 font-medium flex items-center">
-                  {item.feature}
+              {advantages.map((item, i) => (
+                <div key={i} className="grid grid-cols-3 border-b border-white/[0.05] last:border-b-0 hover:bg-white/[0.02] transition-colors">
+                  <div className="p-4 sm:p-6 text-[13px] sm:text-[14px] text-white/80 font-medium flex items-center">
+                    {item.feature}
+                  </div>
+                  <div className="p-4 sm:p-6 text-[13px] sm:text-[14px] font-bold text-white flex items-center border-l border-white/10 bg-gradient-to-r from-white/[0.03] to-transparent gap-2 sm:gap-3">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item.skyra}
+                  </div>
+                  <div className="p-4 sm:p-6 text-[13px] sm:text-[14px] text-white/40 flex items-center border-l border-white/10 gap-2 sm:gap-3">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-red-500/50 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    {item.other}
+                  </div>
                 </div>
-                <div className="p-6 text-[14px] font-bold text-white flex items-center border-l border-white/10 bg-gradient-to-r from-white/[0.03] to-transparent gap-3">
-                  <svg className="w-5 h-5 text-white flex-shrink-0 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                  </svg>
-                  {item.skyra}
-                </div>
-                <div className="p-6 text-[14px] text-white/40 flex items-center border-l border-white/10 gap-3">
-                  <svg className="w-5 h-5 text-red-500/50 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                  {item.other}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </motion.div>
 

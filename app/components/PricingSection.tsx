@@ -51,7 +51,7 @@ export default function PricingSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[800px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[800px] mx-auto px-4 sm:px-0">
           {plans.map((plan, i) => (
             <motion.div
               key={i}
