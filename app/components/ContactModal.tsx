@@ -153,8 +153,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 
                 <a 
                   href="https://www.linkedin.com/in/fethi-mesli-9a8689304/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
                   className="w-full py-3.5 rounded-xl text-[13px] font-black transition-all flex items-center justify-center gap-3 silver-glass text-white/80 hover:text-white border border-white/10 hover:border-white/30 hover:bg-white/5 hover:scale-[1.02]"
                 >
                   <svg className="w-5 h-5 fill-[#0a66c2]" viewBox="0 0 24 24">
