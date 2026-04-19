@@ -109,7 +109,7 @@ export default function HeroSection() {
               repensée.
             </motion.span>
           </h1>
-          <div className="absolute -inset-x-20 -inset-y-10 bg-white/5 blur-[100px] rounded-full -z-10 opacity-30" />
+          <div className="absolute -inset-x-20 -inset-y-10 bg-white/5 blur-[40px] md:blur-[100px] rounded-full -z-10 opacity-30 will-change-transform" />
         </motion.div>
 
         {/* Subtitle */}

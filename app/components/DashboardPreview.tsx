@@ -137,7 +137,7 @@ export default function DashboardPreview() {
             </div>
             
             {/* External Bloom Effect */}
-            <div className="absolute -inset-20 bg-white/5 blur-[120px] rounded-full pointer-events-none -z-10 group-hover:opacity-100 opacity-30 transition-opacity" />
+            <div className="absolute -inset-20 bg-white/5 blur-[60px] md:blur-[120px] rounded-full pointer-events-none -z-10 group-hover:opacity-100 opacity-30 transition-opacity will-change-transform" />
           </motion.div>
         </motion.div>
       </div>
