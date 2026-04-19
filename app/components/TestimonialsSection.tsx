@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    quote: "Depuis le déploiement de Skyra Engine, notre algorithme MRP anticipe nos commandes de matières premières sans aucune intervention humaine. Les ruptures de stock sont du passé.",
+    quote: "Depuis le déploiement de Skyra ERP, notre algorithme MRP anticipe nos commandes de matières premières sans aucune intervention humaine. Les ruptures de stock sont du passé.",
     author: "Rafik B.",
     role: "Directeur de production",
     company: "Industries L.T."

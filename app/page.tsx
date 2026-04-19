@@ -4,11 +4,14 @@ import { useEffect, useRef } from "react";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import TrustBanner from "./components/TrustBanner";
+import ArchitectureOrbit from "./components/ArchitectureOrbit";
 import PerspectiveSection from "./components/PerspectiveSection";
 import FeaturesSection from "./components/FeaturesSection";
 import DashboardPreview from "./components/DashboardPreview";
 import ComparisonSection from "./components/ComparisonSection";
+import PricingSection from "./components/PricingSection";
 import TestimonialsSection from "./components/TestimonialsSection";
+import FaqSection from "./components/FaqSection";
 import StatsSection from "./components/StatsSection";
 import DownloadSection from "./components/DownloadSection";
 import Footer from "./components/Footer";
@@ -28,11 +31,14 @@ export default function Home() {
       <main className="bg-surface relative overflow-hidden">
         <HeroSection />
         <TrustBanner />
+        <ArchitectureOrbit />
         <PerspectiveSection />
         <FeaturesSection />
         <DashboardPreview />
         <ComparisonSection />
+        <PricingSection />
         <TestimonialsSection />
+        <FaqSection />
         <StatsSection />
         <DownloadSection />
       </main>

@@ -90,7 +90,7 @@ export default function HeroSection() {
                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white shadow-[0_0_10px_white]"></span>
                </span>
                <span className="text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-shine-silver">
-                 Skyra Engine v1.1 — BETA RELEASE
+                 Skyra ERP v1.1 — BETA RELEASE
                </span>
              </div>
            </div>

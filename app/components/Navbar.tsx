@@ -38,7 +38,7 @@ export default function Navbar() {
               <span className="text-black font-black text-[15px]">S</span>
             </div>
             <span className="text-[14px] font-black uppercase tracking-[0.4em] text-white group-hover:text-primary-hover transition-all">
-              Skyra Engine
+              Skyra ERP
             </span>
           </a>
 

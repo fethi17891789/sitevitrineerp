@@ -40,7 +40,7 @@ export default function PerspectiveSection() {
             <span className="text-gradient-silver">une vérité unique.</span>
           </motion.h2>
           <motion.p variants={itemVars} className="text-[17px] text-muted max-w-[700px] mx-auto leading-relaxed font-medium">
-            Fini les asymétries d'information. Skyra Engine offre une interface omnisciente pour la direction, et des outils ultra-ciblés pour vos équipes sur le terrain.
+            Fini les asymétries d'information. Skyra ERP offre une interface omnisciente pour la direction, et des outils ultra-ciblés pour vos équipes sur le terrain.
           </motion.p>
         </motion.div>
 

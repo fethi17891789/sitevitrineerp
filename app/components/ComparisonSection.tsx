@@ -48,7 +48,7 @@ export default function ComparisonSection() {
           className="text-center mb-16"
         >
           <h2 className="text-[clamp(2rem,5vw,3rem)] font-black tracking-tight mb-6 text-white leading-tight">
-            Pourquoi choisir <span className="text-gradient-silver">Skyra Engine</span> ?
+            Pourquoi choisir <span className="text-gradient-silver">Skyra ERP</span> ?
           </h2>
           <p className="text-[16px] text-muted max-w-[600px] mx-auto font-medium">
             Comparaison frontale avec les ERP traditionnels (Odoo, SAP) qui pèsent sur vos budgets et ralentissent votre flexibilité.
@@ -68,7 +68,7 @@ export default function ComparisonSection() {
                 Fonctionnalité
               </div>
               <div className="p-6 font-black text-white uppercase tracking-widest text-[14px] flex items-center border-l border-white/10 bg-white/5">
-                Skyra Engine
+                Skyra ERP
               </div>
               <div className="p-6 font-bold text-white/50 uppercase tracking-widest text-[12px] flex items-center border-l border-white/10">
                 SaaS Traditionnels
