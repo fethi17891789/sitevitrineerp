@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 
-export default function HeroSection() {
+export default function HeroSection({ onExplore }: { onExplore?: () => void }) {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -131,7 +131,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] as any }}
           className="mt-14 flex flex-col sm:flex-row items-center gap-6 relative z-50"
         >
-          <button className="relative group px-6 py-4 sm:px-10 sm:py-5 rounded-full bg-white text-black font-bold text-[12px] sm:text-[14px] leading-none tracking-widest uppercase hover:scale-105 active:scale-95 transition-all duration-500 shadow-[0_0_60px_rgba(255,255,255,0.4)] cursor-pointer overflow-hidden border-none focus:outline-none w-full sm:w-auto flex justify-center">
+          <button onClick={onExplore} className="relative group px-6 py-4 sm:px-10 sm:py-5 rounded-full bg-white text-black font-bold text-[12px] sm:text-[14px] leading-none tracking-widest uppercase hover:scale-105 active:scale-95 transition-all duration-500 shadow-[0_0_60px_rgba(255,255,255,0.4)] cursor-pointer overflow-hidden border-none focus:outline-none w-full sm:w-auto flex justify-center">
             <span className="relative z-10 flex items-center gap-3">
               Explorer le moteur
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">

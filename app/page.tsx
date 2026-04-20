@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import TrustBanner from "./components/TrustBanner";
@@ -15,21 +15,46 @@ import FaqSection from "./components/FaqSection";
 import StatsSection from "./components/StatsSection";
 import DownloadSection from "./components/DownloadSection";
 import Footer from "./components/Footer";
+import WarpTunnel from "./components/WarpTunnel";
+import EngineView from "./components/EngineView";
 
 export default function Home() {
+  const [warpActive, setWarpActive] = useState(false);
+  const [showEngine, setShowEngine] = useState(false);
+
   useEffect(() => {
-    // Force scroll to top on refresh
     window.scrollTo(0, 0);
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
     }
   }, []);
 
+  const handleExplore = () => {
+    window.scrollTo({ top: 0 });
+    setWarpActive(true);
+  };
+
+  const handleWarpComplete = () => {
+    setWarpActive(false);
+    setShowEngine(true);
+  };
+
+  const handleBack = () => {
+    setShowEngine(false);
+  };
+
+  // ── Engine View (scroll-hijacked feature showcase) ──
+  if (showEngine) {
+    return <EngineView onBack={handleBack} />;
+  }
+
+  // ── Main Site ──
   return (
     <>
+      <WarpTunnel isActive={warpActive} onComplete={handleWarpComplete} />
       <Navbar />
       <main className="bg-surface relative overflow-hidden">
-        <HeroSection />
+        <HeroSection onExplore={handleExplore} />
         <TrustBanner />
         <ArchitectureOrbit />
         <PerspectiveSection />
