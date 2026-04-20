@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const features = [
   {
@@ -158,25 +159,29 @@ export default function FeaturesSection() {
                 title: "Production & MRP",
                 desc: "Automatisation de la planification des ressources matérielles. Notre moteur prédictif calcule vos approvisionnements pour qu'aucune ligne de production ne s'arrête. Fini les ruptures de stock critiques.",
                 icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z",
-                align: "left"
+                align: "left",
+                image: "/screenshots/mrp.png"
               },
               {
                 title: "Logistique & Tracking GPS",
                 desc: "Surveillez votre flotte et vos expéditions en temps réel grâce à notre synchronisation continue. Recevez les positions GPS, gérez les chauffeurs et réagissez aux anomalies de livraison dans la seconde.",
                 icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z",
-                align: "right"
+                align: "right",
+                image: "/screenshots/logistique.png"
               },
               {
                 title: "Traçabilité Blockchain",
                 desc: "L'inviolabilité au service de votre gouvernance. Chaque ordre d'achat, chaque mouvement de stock est haché et inscrit dans un registre immuable privé. Vos audits internes n'ont jamais été aussi sereins.",
                 icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
-                align: "left"
+                align: "left",
+                image: "/screenshots/accueil.png"
               },
               {
                 title: "Communication Asynchrone",
                 desc: "Remplacez vos boucles WhatsApp fragmentées. Un Messenger d'entreprise 100% natif, connecté aux commandes et aux alertes. Partagez l'information critique dans l'espace où s'effectue le travail.",
                 icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z",
-                align: "right"
+                align: "right",
+                image: "/screenshots/chat.png"
               }
             ].map((ft, i) => (
               <motion.div 
@@ -199,17 +204,21 @@ export default function FeaturesSection() {
                    <h3 className="text-[28px] md:text-[36px] font-black tracking-tight mb-4 text-white hover:text-gradient-silver transition-colors">{ft.title}</h3>
                    <p className="text-[16px] md:text-[18px] text-muted leading-relaxed font-medium">{ft.desc}</p>
                 </div>
-                <div className="w-full md:w-1/2 aspect-video rounded-3xl border-spotlight p-[1px] relative overflow-hidden group">
-                   <div className="absolute inset-0 silver-glass rounded-3xl flex items-center justify-center relative overflow-hidden">
-                      {/* Abstract visuals representing the feature */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent" />
-                      <div className="w-full h-full flex flex-col gap-2 p-8 opacity-20 group-hover:opacity-60 transition-opacity duration-700">
-                        <div className="h-4 w-1/3 bg-white rounded-full mb-4" />
-                        <div className="h-2 w-full bg-white/50 rounded-full" />
-                        <div className="h-2 w-5/6 bg-white/50 rounded-full" />
-                        <div className="h-2 w-4/6 bg-white/50 rounded-full" />
-                      </div>
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/10 blur-[40px] rounded-full group-hover:bg-white/20 transition-all duration-700" />
+                <div className="w-full md:w-1/2 aspect-video rounded-3xl border-spotlight p-[1px] relative overflow-hidden group cursor-pointer">
+                   <div className="absolute inset-0 rounded-3xl overflow-hidden">
+                      <Image
+                        src={ft.image}
+                        alt={ft.title}
+                        fill
+                        className="object-cover object-top transition-all duration-700 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      {/* Premium cinematic overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-surface/20 via-transparent to-surface/40 pointer-events-none" />
+                      <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-surface/70 to-transparent pointer-events-none" />
+                      <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10 pointer-events-none" />
+                      {/* Hover shine */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                    </div>
                 </div>
               </motion.div>
