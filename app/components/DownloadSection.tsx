@@ -34,6 +34,7 @@ export default function DownloadSection() {
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as any }}
         className="max-w-[900px] mx-auto px-8 text-center relative z-10"
       >
+        <h2 className="sr-only">Téléchargement de Skyra ERP : Solution de gestion industrielle 4.0</h2>
         <div className="border-spotlight rounded-[64px] p-[1px] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.8)]">
           <div className="silver-glass rounded-[40px] md:rounded-[64px] p-8 py-16 md:p-20 lg:p-32 relative overflow-hidden group">
             
@@ -45,11 +46,11 @@ export default function DownloadSection() {
               className="relative z-10 flex flex-col justify-center items-center"
             >
               <motion.h2 variants={itemVars} className="text-[clamp(1.5rem,7vw,4.5rem)] font-black tracking-tighter mb-10 text-white leading-[1] text-gradient-silver text-center">
-                L&apos;industrie de <br/> demain, aujourd&apos;hui.
+                L&apos;industrie de <br/> demain, dès maintenant.
               </motion.h2>
               
               <motion.p variants={itemVars} className="text-white/50 text-[19px] mb-16 max-w-[500px] font-medium leading-relaxed text-center">
-                Procurez-vous l&apos;exécutable système. Aucune dépendance externe, installation millimétrée. Un standard Silver absolu.
+                Installez le moteur ERP de référence pour l&apos;industrie 4.0 en Algérie. Performance native, orchestration de production et logistique centralisée.
               </motion.p>
 
               <motion.a 

@@ -49,9 +49,9 @@ export default function TrustBanner() {
               {item.icon}
             </div>
             <div>
-              <h4 className="text-[13px] font-black text-white uppercase tracking-widest leading-none mb-1 group-hover:text-gradient-silver transition-colors">
+              <h3 className="text-[13px] font-black text-white uppercase tracking-widest leading-none mb-1 group-hover:text-gradient-silver transition-colors">
                 {item.title}
-              </h4>
+              </h3>
               <p className="text-[12px] text-muted font-medium">
                 {item.desc}
               </p>

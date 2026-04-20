@@ -55,7 +55,7 @@ export default function HeroSection({ onExplore }: { onExplore?: () => void }) {
       >
         <Image
           src="/hero-bg.png"
-          alt="Abstract Industry"
+          alt="Skyra ERP - Interface de gestion industrielle moderne et logiciel ERP web"
           fill
           priority
           className="object-cover opacity-20 grayscale mix-blend-screen"
@@ -120,8 +120,7 @@ export default function HeroSection({ onExplore }: { onExplore?: () => void }) {
           transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="mt-8 text-[clamp(1rem,2vw,1.15rem)] text-muted leading-relaxed max-w-[600px] font-medium"
         >
-          Fusionnez inventaire de pointe, ventes, et orchestration MRP au sein
-          d&apos;une architecture unifiée. Conçu pour les entreprises exigeantes.
+          Le logiciel ERP web-based pour l&apos;industrie 4.0. Fusionnez inventaire de pointe, ventes et orchestration MRP au sein d&apos;une architecture unifiée et sécurisée.
         </motion.p>
 
         {/* CTAs */}

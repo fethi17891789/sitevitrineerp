@@ -56,6 +56,7 @@ export default function StatsSection() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
 
       <div ref={ref} className="max-w-[1100px] mx-auto px-6">
+        <h2 className="sr-only">Performance et scalabilité de Skyra ERP</h2>
         <motion.div
           initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
           animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
