@@ -74,7 +74,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-white/[0.05] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[12px] text-white/40 font-medium">
-            © {new Date().getFullYear()} Projet de Fin de Cycle (PFC). Master Informatique.
+            © {new Date().getFullYear()} Projet de Fin de Cycle (PFC). Licence Génie Industriel.
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="text-white/40 hover:text-white transition-colors">
