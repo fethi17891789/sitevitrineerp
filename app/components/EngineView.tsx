@@ -124,7 +124,7 @@ export default function EngineView({ onBack }: EngineViewProps) {
 
       setTimeout(() => {
         cooldownRef.current = false;
-      }, 700);
+      }, 400);
     },
     [activeIndex]
   );
@@ -191,9 +191,9 @@ export default function EngineView({ onBack }: EngineViewProps) {
 
   const feature = features[activeIndex];
   const slideVariants = {
-    enter: (dir: number) => ({ opacity: 0, y: dir > 0 ? 60 : -60 }),
+    enter: (dir: number) => ({ opacity: 0, y: dir > 0 ? 40 : -40 }),
     center: { opacity: 1, y: 0 },
-    exit: (dir: number) => ({ opacity: 0, y: dir > 0 ? -60 : 60 }),
+    exit: (dir: number) => ({ opacity: 0, y: dir > 0 ? -40 : 40 }),
   };
 
   return (
@@ -210,13 +210,13 @@ export default function EngineView({ onBack }: EngineViewProps) {
       </div>
 
       {/* Top navigation */}
-      <div className="fixed top-0 left-0 right-0 px-6 md:px-12 py-5 flex items-center justify-between z-50">
+      <div className="fixed top-0 left-0 right-0 px-4 md:px-12 py-4 md:py-5 flex items-center justify-between z-50">
         <button
           onClick={onBack}
-          className="flex items-center gap-2 text-white/40 hover:text-white transition-colors text-[12px] uppercase tracking-[0.2em] font-bold cursor-pointer"
+          className="flex items-center gap-2 text-white/40 hover:text-white transition-colors text-[10px] md:text-[12px] uppercase tracking-[0.2em] font-bold cursor-pointer bg-white/5 md:bg-transparent px-3 py-1.5 md:p-0 rounded-full border border-white/5 md:border-none"
         >
           <svg
-            className="w-4 h-4"
+            className="w-3.5 h-3.5 md:w-4 md:h-4"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -231,15 +231,15 @@ export default function EngineView({ onBack }: EngineViewProps) {
           Retour
         </button>
 
-        <div className="text-white/25 text-[13px] font-mono tracking-wider">
+        <div className="text-white/25 text-[11px] md:text-[13px] font-mono tracking-wider">
           {String(activeIndex + 1).padStart(2, "0")} /{" "}
           {String(features.length).padStart(2, "0")}
         </div>
       </div>
 
       {/* ────────────── MAIN CONTENT ────────────── */}
-      <div className="h-full flex items-center justify-center px-6 md:px-16 lg:px-24">
-        <AnimatePresence mode="wait" custom={direction}>
+      <div className="h-full flex items-center justify-center px-6 md:px-16 lg:px-24 pt-12 md:pt-0">
+        <AnimatePresence mode="popLayout" custom={direction}>
           <motion.div
             key={feature.id}
             custom={direction}
@@ -247,20 +247,20 @@ export default function EngineView({ onBack }: EngineViewProps) {
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full max-w-[1200px] flex flex-col md:flex-row items-center gap-10 md:gap-16"
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full max-w-[1200px] flex flex-col md:flex-row items-center gap-8 md:gap-16"
           >
             {/* ── Text side ── */}
-            <div className="flex-1 max-w-lg">
-              {/* Icon */}
+            <div className="flex-1 max-w-lg order-1 md:order-1 text-center md:text-left">
+              {/* Icon - Hidden on small mobile to save space if needed, or just centered */}
               <motion.div
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.1, duration: 0.4 }}
-                className="w-14 h-14 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(255,255,255,0.03)]"
+                className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center mb-4 md:mb-6 shadow-[0_0_30px_rgba(255,255,255,0.03)] mx-auto md:mx-0"
               >
                 <svg
-                  className="w-7 h-7 text-white/80"
+                  className="w-6 h-6 md:w-7 md:h-7 text-white/80"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -288,7 +288,7 @@ export default function EngineView({ onBack }: EngineViewProps) {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.15 }}
-                className="text-white/30 text-[12px] uppercase tracking-[0.25em] font-bold mb-3"
+                className="text-white/30 text-[10px] md:text-[12px] uppercase tracking-[0.25em] font-bold mb-2 md:mb-3"
               >
                 {feature.subtitle}
               </motion.p>
@@ -298,7 +298,7 @@ export default function EngineView({ onBack }: EngineViewProps) {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-[clamp(1.8rem,5vw,3rem)] font-black tracking-tight text-white leading-[1.1] mb-5"
+                className="text-[clamp(1.5rem,5vw,3rem)] font-black tracking-tight text-white leading-[1.1] mb-4 md:mb-5"
               >
                 {feature.title}
               </motion.h2>
@@ -308,20 +308,20 @@ export default function EngineView({ onBack }: EngineViewProps) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
-                className="text-[15px] md:text-[16px] text-muted leading-relaxed mb-8"
+                className="text-[13px] md:text-[16px] text-muted leading-relaxed mb-6 md:mb-8 max-w-[300px] md:max-w-none mx-auto md:mx-0"
               >
                 {feature.description}
               </motion.p>
 
-              {/* Highlights */}
-              <motion.ul className="space-y-3">
+              {/* Highlights - Hidden on very small screens to save space */}
+              <motion.ul className="space-y-2 md:space-y-3 hidden sm:block">
                 {feature.highlights.map((h, i) => (
                   <motion.li
                     key={h}
                     initial={{ opacity: 0, x: -15 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.35 + i * 0.07 }}
-                    className="flex items-center gap-3 text-[13px] md:text-[14px] text-white/60 font-medium"
+                    className="flex items-center gap-3 text-[12px] md:text-[14px] text-white/60 font-medium justify-center md:justify-start"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-white/30 shrink-0" />
                     {h}
@@ -335,24 +335,24 @@ export default function EngineView({ onBack }: EngineViewProps) {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.15, duration: 0.6 }}
-              className="flex-1 w-full max-w-xl"
+              className="flex-1 w-full max-w-xl order-2 md:order-2"
             >
               {feature.image ? (
-                <div className="relative rounded-2xl border border-white/[0.08] overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.6)]">
-                  {/* Window chrome */}
-                  <div className="h-8 bg-[#0d0f1a] border-b border-white/[0.06] flex items-center px-3.5 gap-[6px] shrink-0">
+                <div className="relative rounded-2xl border border-white/[0.08] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+                  {/* Window chrome - Hidden on small mobile to save space */}
+                  <div className="hidden md:flex h-8 bg-[#0d0f1a] border-b border-white/[0.06] items-center px-3.5 gap-[6px] shrink-0">
                     <div className="w-[10px] h-[10px] rounded-full bg-[#ff5f57]" />
                     <div className="w-[10px] h-[10px] rounded-full bg-[#ffbd2e]" />
                     <div className="w-[10px] h-[10px] rounded-full bg-[#28c840]" />
                     <div className="mx-auto h-4 w-32 rounded-md bg-white/[0.04] border border-white/[0.05]" />
                   </div>
                   {/* Screenshot */}
-                  <div className="relative aspect-[16/10] overflow-hidden bg-surface">
+                  <div className="relative aspect-[16/10] md:aspect-[16/10] overflow-hidden bg-surface">
                     <Image
                       src={feature.image}
                       alt={feature.title}
                       fill
-                      className="object-cover scale-[1.15]"
+                      className="object-cover scale-[1.1] md:scale-[1.15]"
                       style={{
                         objectPosition: feature.imagePosition || "center",
                       }}
@@ -421,13 +421,13 @@ export default function EngineView({ onBack }: EngineViewProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="fixed bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/15 text-[10px] uppercase tracking-[0.3em]"
+          className="fixed bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/10 text-[9px] md:text-[10px] uppercase tracking-[0.3em] pointer-events-none"
         >
-          <span>Scroll</span>
+          <span className="hidden md:block">Scroll</span>
           <motion.svg
             animate={{ y: [0, 4, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-4 h-4"
+            className="w-3.5 h-3.5 md:w-4 md:h-4"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -448,11 +448,11 @@ export default function EngineView({ onBack }: EngineViewProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50"
+          className="fixed bottom-10 md:bottom-8 left-1/2 -translate-x-1/2 z-50 w-full px-8 flex justify-center"
         >
           <button
             onClick={onBack}
-            className="px-8 py-4 rounded-full silver-glass border-spotlight text-white font-bold text-[12px] uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer flex items-center gap-3"
+            className="w-full sm:w-auto px-8 py-3.5 md:px-10 md:py-4 rounded-full silver-glass border-spotlight text-white font-bold text-[11px] md:text-[13px] uppercase tracking-[0.2em] hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer flex items-center justify-center gap-3"
           >
             <svg
               className="w-4 h-4 rotate-180"

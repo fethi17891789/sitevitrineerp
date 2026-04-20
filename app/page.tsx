@@ -23,10 +23,16 @@ export default function Home() {
   const [showEngine, setShowEngine] = useState(false);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
+    const handleHashChange = () => {
+      const isEngine = window.location.hash === "#engine";
+      setShowEngine(isEngine);
+      if (isEngine) window.scrollTo(0, 0);
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    handleHashChange(); // Check on mount
+
+    return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
   const handleExplore = () => {
@@ -37,10 +43,17 @@ export default function Home() {
   const handleWarpComplete = () => {
     setWarpActive(false);
     setShowEngine(true);
+    if (window.location.hash !== "#engine") {
+      window.location.hash = "engine";
+    }
   };
 
   const handleBack = () => {
-    setShowEngine(false);
+    if (window.location.hash === "#engine") {
+      window.history.back();
+    } else {
+      setShowEngine(false);
+    }
   };
 
   // ── Engine View (scroll-hijacked feature showcase) ──
