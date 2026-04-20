@@ -23,7 +23,7 @@ export default function HeroSection({ onExplore }: { onExplore?: () => void }) {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+      transition: { staggerChildren: 0.05, delayChildren: 0.05 },
     },
   };
 
@@ -33,7 +33,7 @@ export default function HeroSection({ onExplore }: { onExplore?: () => void }) {
       opacity: 1,
       y: 0,
       filter: "blur(0px)",
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as any }
+      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as any }
     },
   };
 

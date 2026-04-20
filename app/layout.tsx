@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import MouseTrack from "./components/MouseTrack";
 
@@ -9,11 +9,17 @@ const inter = Inter({
   display: "swap",
 });
 
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://sitevitrineerp.vercel.app"),
-  title: "Skyra ERP | Logiciel de Gestion d'Entreprise & Production",
+  title: "Skyra ERP | Logiciel de Gestion d'Entreprise n°1 en Algérie",
   description:
-    "Découvrez Skyra ERP, la plateforme de gestion complète pour unifier inventaire, ventes, achats, production industrielle et logistique. Conçu pour votre entreprise.",
+    "Skyra est le meilleur logiciel ERP pour la gestion d'entreprise industrielle. Unifiez inventaire, ventes, production (MRP) et logistique avec performance.",
   keywords: [
     "ERP",
     "logiciel de gestion",
@@ -60,7 +66,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={`${inter.variable} antialiased`}>
+    <html lang="fr" className={`${inter.variable} ${plusJakartaSans.variable} antialiased`}>
       <body className="min-h-screen bg-surface font-sans">
         <script
           type="application/ld+json"
@@ -77,7 +83,7 @@ export default function RootLayout({
                 priceCurrency: "DZD",
               },
               description:
-                "Plateforme modulaire qui unifie inventaire, ventes, achats, production industrielle et communication.",
+                "Skyra ERP est le logiciel de gestion d'entreprise et de production industrielle leader à Tlemcen, Algérie. Optimisez votre logistique, inventaire et comptabilité avec notre solution ERP complète.",
               creator: {
                 "@type": "Organization",
                 name: "Skyra",
