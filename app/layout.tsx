@@ -33,6 +33,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Skyra Team" }],
   creator: "Skyra",
+  applicationName: "Skyra ERP",
+  appleWebApp: {
+    title: "Skyra ERP",
+    statusBarStyle: "default",
+    capable: true,
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -68,6 +74,17 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${inter.variable} ${plusJakartaSans.variable} antialiased`}>
       <body className="min-h-screen bg-surface font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Skyra ERP",
+              "url": "https://sitevitrineerp.vercel.app"
+            }),
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
