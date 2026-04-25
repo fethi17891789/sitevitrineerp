@@ -1,12 +1,12 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="80 310 945 345">
   <defs>
-    <!-- Effet silver léger et équilibré : ni trop gris, ni trop blanc -->
+    <!-- Effet silver accentué : contraste légèrement renforcé pour être bien visible tout en restant clair -->
     <linearGradient id="silver-elegant" gradientUnits="userSpaceOnUse" x1="80" y1="310" x2="1025" y2="655">
       <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="25%" stop-color="#E2E8F0"/>
+      <stop offset="25%" stop-color="#CBD5E1"/>
       <stop offset="48%" stop-color="#FFFFFF"/>
-      <stop offset="52%" stop-color="#CBD5E1"/>
-      <stop offset="75%" stop-color="#F1F5F9"/>
+      <stop offset="52%" stop-color="#94A3B8"/>
+      <stop offset="75%" stop-color="#E2E8F0"/>
       <stop offset="100%" stop-color="#FFFFFF"/>
     </linearGradient>
   </defs>

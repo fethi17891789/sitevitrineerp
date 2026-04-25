@@ -38,7 +38,7 @@ export default function Navbar() {
         <nav className="max-w-7xl mx-auto flex items-center justify-between h-16 md:h-20 px-4 md:px-8">
           <a href="#hero" className="flex items-center gap-2 sm:gap-3 group">
             <img
-              src="/skyra-logo-full-silver.svg?v=elegant"
+              src="/skyra-logo-full-silver.svg?v=accent"
               alt="Skyra ERP"
               className="h-11 md:h-14 w-auto transition-all group-hover:scale-105 active:scale-95 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
             />
