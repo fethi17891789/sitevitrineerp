@@ -1,0 +1,18 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="253 188 534 738">
+  <defs>
+    <!-- Effet silver léger et équilibré -->
+    <linearGradient id="silver-elegant" gradientUnits="userSpaceOnUse" x1="253" y1="188" x2="787" y2="926">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#E2E8F0"/>
+      <stop offset="48%" stop-color="#FFFFFF"/>
+      <stop offset="52%" stop-color="#CBD5E1"/>
+      <stop offset="75%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+
+  <g fill="url(#silver-elegant)">
+    <path d="M727.86,196.27H543.58a128,128,0,0,0-101.37,49.84L261.14,481c-23.49,30.47-1.76,74.65,36.71,74.65H515.34L753,247.37C769.08,226.51,754.21,196.27,727.86,196.27Z"/>
+    <path d="M747.08,555.65H515.34L292.75,844.4c-22.22,28.82-1.67,70.6,34.72,70.6h173.7a99.43,99.43,0,0,0,78.74-38.7L778.23,619C798.19,593.13,779.74,555.65,747.08,555.65Z"/>
+  </g>
+</svg>

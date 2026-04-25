@@ -10,9 +10,9 @@ export default function Footer() {
     <footer className="relative bg-surface border-t border-white/10 overflow-hidden pt-24 pb-12">
       <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       
-      {/* Massive Watermark Symbol Background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none flex items-center justify-center opacity-[0.02] mix-blend-screen overflow-hidden">
-         <span className="text-[60vw] font-black leading-none tracking-tighter select-none">SKYRA</span>
+      {/* Massive Watermark Text Background */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none flex items-center justify-center opacity-[0.015] mix-blend-screen overflow-hidden">
+         <img src="/skyra-text-silver.svg" alt="" className="w-[400vw] md:w-[200vw] max-w-none h-auto grayscale brightness-200" />
       </div>
 
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
@@ -21,10 +21,11 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 group cursor-pointer mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-white via-white/80 to-white/40 flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.2)] border border-white/20">
-                <span className="text-black font-black text-[16px]">S</span>
-              </div>
-              <span className="text-[18px] font-black uppercase tracking-widest text-white">Skyra ERP</span>
+              <img
+                src="/skyra-logo-full-silver.svg?v=elegant"
+                alt="Skyra ERP"
+                className="h-10 w-auto drop-shadow-[0_0_8px_rgba(255,255,255,0.25)] transition-all group-hover:scale-110"
+              />
             </div>
             <p className="text-[13px] text-muted font-medium leading-relaxed max-w-[200px]">
               L'industrie 4.0 à portée de main. Le premier moteur ERP autonome couplé à l'IA et sécurisé par Blockchain.

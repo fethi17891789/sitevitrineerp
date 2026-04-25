@@ -37,12 +37,11 @@ export default function Navbar() {
       >
         <nav className="max-w-7xl mx-auto flex items-center justify-between h-16 md:h-20 px-4 md:px-8">
           <a href="#hero" className="flex items-center gap-2 sm:gap-3 group">
-            <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gradient-to-br from-white via-primary-soft to-white flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all group-hover:rotate-6 group-hover:scale-110 active:scale-90 border border-white/20">
-              <span className="text-black font-black text-[15px]">S</span>
-            </div>
-            <span className="text-[14px] font-black uppercase tracking-[0.4em] text-white group-hover:text-primary-hover transition-all">
-              Skyra ERP
-            </span>
+            <img
+              src="/skyra-logo-full-silver.svg?v=elegant"
+              alt="Skyra ERP"
+              className="h-11 md:h-14 w-auto transition-all group-hover:scale-105 active:scale-95 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+            />
           </a>
 
           <div className="hidden lg:flex items-center gap-2">
